@@ -1,0 +1,17 @@
+name = "Shoelace"
+license = "MIT"
+licenselink = "https://github.com/gjb2048/hugo-theme_shoelace/blob/master/LICENSE.md"
+description = "Personal blog theme powered by Hugo"
+homepage = "http://github.com/gjb2048/hugo-theme_shoelace/"
+tags = ["blog", "minimal", "personal", "responsive"]
+features = ["responsive"]
+min_version = "0.80.0"
+
+[author]
+  name = "Gareth J Barnard"
+  homepage = "https://gjb2048.github.io/"
+
+[original]
+  name = "Calin Tataru"
+  homepage = "https://calintat.github.io/"
+  repo = "http://github.com/calintat/minimal/"
