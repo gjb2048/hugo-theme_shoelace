@@ -13,7 +13,7 @@ enableRobotsTXT = true
     accent = "#fc0"
     showBorder = true
     backgroundColor = "#eee"
-    font = "Raleway" # should match the name on Google Fonts!
+    font = "Open Sans" # Should match the name in the assets/scss/_fonts file.
 
 [markup]
   [markup.highlight]
