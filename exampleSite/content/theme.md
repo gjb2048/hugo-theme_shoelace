@@ -5,7 +5,7 @@ description: Theme things
 
 ## Images
 
-![Theme thumbnail](/home/tn.png "Thumbnail")
+![Theme thumbnail](/images/tn.png "Thumbnail")
 
 ## Highlighting
 {{< highlight java >}}
