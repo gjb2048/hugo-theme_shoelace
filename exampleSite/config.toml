@@ -26,26 +26,37 @@ enableRobotsTXT = true
     url = "/"
     name = "Home"
     weight = 1
+    [menu.main.params]
+        icon = "fa-solid fa-house"
+
 
 [[menu.main]]
     url = "/about/"
     name = "About"
     weight = 2
+    [menu.main.params]
+        icon = "fa-solid fa-circle-info"
 
 [[menu.main]]
     url = "/post/"
     name = "Posts"
     weight = 3
+    [menu.main.params]
+        icon = "fa-solid fa-newspaper"
 
 [[menu.main]]
     url = "/project/"
     name = "Projects"
     weight = 4
+    [menu.main.params]
+        icon = "fa-solid fa-diagram-project"
 
 [[menu.main]]
     url = "/theme/"
     name = "Theme"
     weight = 5
+    [menu.main.params]
+        icon = "fa-solid fa-brush"
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
