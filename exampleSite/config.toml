@@ -12,7 +12,7 @@ enableRobotsTXT = true
     githubUsername = "#"
     accent = "#fc0"
     showBorder = true
-    backgroundColor = "#eee"
+    backgroundColor = "#f2f2f2"
     font = "Open Sans" # Should match the name in the assets/scss/_fonts file.
 
 [markup]
@@ -22,13 +22,14 @@ enableRobotsTXT = true
     style = 'dracula'
     tabWidth = 4
 
+menu = ['main', 'icon']
+
 [[menu.main]]
     url = "/"
     name = "Home"
     weight = 1
     [menu.main.params]
         icon = "fa-solid fa-house"
-
 
 [[menu.main]]
     url = "/about/"
@@ -64,25 +65,35 @@ enableRobotsTXT = true
 
 [[menu.icon]]
     url = "mailto:me@example.com"
-    name = "fas fa-envelope"
+    name = "Mail"
     weight = 1
+    [menu.icon.params]
+        icon = "fa-solid fa-envelope"
 
 [[menu.icon]]
     url = "https://github.com/username/"
-    name = "fab fa-github"
+    name = "Github"
     weight = 2
+    [menu.icon.params]
+        icon = "fa-brands fa-github"
 
 [[menu.icon]]
     url = "https://twitter.com/username/"
-    name = "fab fa-twitter"
+    name = "Twitter"
     weight = 3
+    [menu.icon.params]
+        icon = "fa-brands fa-twitter"
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/username/"
-    name = "fab fa-linkedin"
+    name = "Linkedin"
     weight = 4
+    [menu.icon.params]
+        icon = "fa-brands fa-linkedin"
 
 [[menu.icon]]
     url = "https://www.stackoverflow.com/username/"
-    name = "fab fa-stack-overflow"
+    name = "Stackoverflow"
     weight = 5
+    [menu.icon.params]
+        icon = "fa-brands fa-stack-overflow"

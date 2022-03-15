@@ -1,0 +1,7 @@
+{{ if .Site.Menus.main }}
+    <ul class="nav justify-content-center me-auto mb-2 mb-lg-0">
+        {{ range sort .Site.Menus.main }}
+            <li class="nav-item"><a class="nav-link" href="{{ .URL }}" title="{{ .Name }}"><span class="{{ .Params.icon }} me-2 icon" aria-hidden="true"></span><span class="d-none d-md-inline me-2" aria-hidden="true">{{ .Name }}</span><span class="sr-only">{{ .Name }}</span></a></li>
+        {{ end }}
+    </ul>
+{{ end }}

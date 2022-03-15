@@ -1,6 +1,7 @@
 ---
 title: Theme
 description: Theme things
+tags: ["go", "golang", "hugo"]
 ---
 
 ## Images
