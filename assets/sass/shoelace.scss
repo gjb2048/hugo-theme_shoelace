@@ -65,7 +65,7 @@ a:visited {
 
 a,
 a.icon:hover {
-    text-decoration: none;
+    text-decoration: underline dotted var(--accent);
 }
 
 //a:hover {
