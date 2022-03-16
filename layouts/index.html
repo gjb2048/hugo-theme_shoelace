@@ -1,19 +1,16 @@
-{{ partial "header" . }}
-
-<main>
-    <div class="intro container">
-        {{ if not .Content }}
-        {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
+{{ define "main" }}
+<div class="intro container text-center">
+    {{ if not .Content }}
+    {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
         <h1>{{ .Site.Title }}</h1>
         <h2>{{ markdownify .Site.Params.Description }}</h2>
-        {{ end }}
-        {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
-        <div class="row">
-            {{ partial "navline" . }}
-            {{ partial "navsocial" . }}
-        </div>
-
+    {{ end }}
+    {{ with .Content }}
+        <div class="homepage-content text-justify">{{ . }}</div>
+    {{ end }}
+    <div class="row">
+        {{ partial "navline" . }}
+        {{ partial "navsocial" . }}
     </div>
-</main>
-
-{{ partial "footer" . }}
+</div>
+{{ end }}

@@ -1,12 +1,8 @@
-{{ partial "header" . }}
-
-<main>
-
-    <h2>{{ .Title }}</h2>
-
+{{ define "main" }}
+<div class="row">
+    <h2 class="col-12">{{ .Title }}</h2>
+</div>
+<div class="row">
     {{ range (.Paginator 5).Pages }} {{ partial "list-item" . }} {{ end }}
-
-</main>
-
-{{ partial "paginator" . }}
-{{ partial "footer" . }}
+</div>
+{{ end }}

@@ -1,15 +1,10 @@
-{{ partial "header" . }}
+{{ define "main" }}
+<div>
+    <h2>{{ .Title }}</h2>
+    <h5>{{ .Description }}</h5>
+    {{ partial "tags" . }}
+</div>
 
-<main>
+<div align="start" class="content">{{ .Content }}</div>
 
-    <div>
-        <h2>{{ .Title }}</h2>
-        <h5>{{ .Description }}</h5>
-        {{ partial "tags" . }}
-    </div>
-
-    <div align="start" class="content">{{ .Content }}</div>
-
-</main>
-
-{{ partial "footer" . }}
+{{ end }}

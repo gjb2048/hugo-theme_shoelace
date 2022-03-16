@@ -12,7 +12,7 @@ enableRobotsTXT = true
     githubUsername = "#"
     accent = "#fc0"
     showBorder = true
-    backgroundColor = "#f2f2f2"
+    backgroundColor = "#fcfcfc"
     font = "Open Sans" # Should match the name in the assets/scss/_fonts file.
 
 [markup]

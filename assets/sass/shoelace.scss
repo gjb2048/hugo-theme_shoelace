@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 55px;
-    text-align: center;
+    //text-align: center;
 }
 
 footer,
@@ -92,8 +92,17 @@ a.icon:hover {
 }
 
 // List item for posts/projects
-.item {
-    padding: 10px 0;
+//.item {
+//    padding: 10px 0;
+//}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+
+    .list-item-content {
+        flex: 1 1 auto;
+    }
 }
 
 .item-tag {
