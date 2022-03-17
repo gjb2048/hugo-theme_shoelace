@@ -40,6 +40,7 @@
         {{ end }}
 
         <main class="container">
+            {{ printf "%#v" .Params }}
             {{ block "main" . }}{{ end }}
         </main>
 

@@ -51,13 +51,17 @@ footer {
 
 // Profile picture
 .profile {
-    border-radius: 50%;
-    height: 10vh;
-    width: 10vh;
+    &.profile-10 {
+        height: 10vh;
+        width: 10vh;
+    }
+
+    &.profile-mh-200 {
+        max-height: 200px;
+    }
 }
 
 // Colored links
-
 a:link,
 a:visited {
     color: var(--bs-body-color);

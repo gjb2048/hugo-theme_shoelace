@@ -1,12 +1,28 @@
 {{ define "main" }}
-<div class="intro container text-center">
-    {{ if not .Content }}
-    {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
-        <h1>{{ .Site.Title }}</h1>
-        <h2>{{ markdownify .Site.Params.Description }}</h2>
-    {{ end }}
-    {{ with .Content }}
-        <div class="homepage-content text-justify">{{ . }}</div>
+<div class="intro container">
+    {{ if and (.Content) (.Params.ready) }}
+        <div class="homepage-content text-justify">
+            <h1 class="text-center">{{ .Title }}</h1>
+            {{ if $.Params.avatar }}
+            <div>
+                <div class="float-start me-2 mb-2">
+                    <img class="profile profile-mh-200 img-fluid rounded-circle" src="{{ .Permalink }}{{ $.Params.avatar }}">
+                </div>
+                <div>
+                    {{ .Content }}
+                </div>
+            </div>
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </div>
+    {{ else }}
+    {{ with .Site.Params.profilePic }}
+        <div class="text-center">
+            <img class="profile profile-10 img-fluid rounded-circle" src="{{ . }}"> {{ end }}
+            <h1>{{ .Site.Title }}</h1>
+            <h2>{{ markdownify .Site.Params.Description }}</h2>
+        </div>
     {{ end }}
     <div class="row">
         {{ partial "navline" . }}
