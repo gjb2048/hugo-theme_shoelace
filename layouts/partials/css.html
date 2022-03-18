@@ -1,14 +1,16 @@
+{{ if .Params.background }}
 <style>
     html body {
-        font-family: '{{ .Site.Params.font }}', sans-serif;
-        background-color: {{ .Site.Params.backgroundColor | default "#fcfcfc" }};
-    }
-
-    :root {
-        --accent: {{ .Site.Params.accent | default "#fc0" }};
-        --border-width: {{ if .Site.Params.showBorder | default false }} 5px {{ else }} 0 {{ end }};
+        {{ with .Resources.ByType "image" }}
+            {{ range . }}
+                {{ if eq .Name $.Params.background }}
+                    background: url('{{ .Permalink }}');
+                {{ end }}
+            {{ end }}
+        {{ end }}
     }
 </style>
+{{ end }}
 
 <!-- main -->
 <!-- <link rel="stylesheet" href="{{ "css/main.css" | absURL }}"> -->
@@ -30,8 +32,8 @@
 <!-- Shoelace -->
 {{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $sass := resources.Get "sass/shoelace.scss" }}
-{{ $shoelacestyle := $sass | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $shoelacestyle.Permalink | absURL }}">
+{{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options | fingerprint }}
+<link rel="stylesheet" href="{{ $shoelacestyle.Permalink | absURL }}" integrity="{{ $shoelacestyle.Data.Integrity }}">
 
 <!-- custom -->
 {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}

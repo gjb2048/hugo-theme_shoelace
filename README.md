@@ -71,4 +71,5 @@ The theme uses local fonts. To change the font:
 
 ## Refs
 
-
+https://blog.fullstackdigital.com/how-to-cache-bust-and-concatenate-js-and-sass-files-with-hugo-in-2018-9266fd3c411e
+https://blog.fullstackdigital.com/how-to-use-hugo-template-variables-in-scss-files-in-2018-b8a834accce

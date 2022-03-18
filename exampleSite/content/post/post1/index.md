@@ -4,6 +4,7 @@ date: 2022-03-16
 summary: "This is the first test post"
 thumbnail: "Booster_icon_sm.png"
 tags: ["go", "golang", "hugo", "shoelace"]
+background: "mybackground.webp"
 draft: false
 ---
 

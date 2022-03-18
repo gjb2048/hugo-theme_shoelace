@@ -1,7 +1,8 @@
 ---
 title: About me
 description: The main index file _index.md
-avatar: "mylogo.jpg"
+avatar: "mylogo.webp"
+background: "mybackground.webp"
 ready: true
 ---
 
