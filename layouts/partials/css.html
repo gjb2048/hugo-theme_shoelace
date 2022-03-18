@@ -33,7 +33,7 @@
 {{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $sass := resources.Get "sass/shoelace.scss" }}
 {{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options }}
-{{ $shoelace := slice $bs $brands $regular $solid $fa $shoelacestyle | resources.Concat "shoelace.css" | minify | fingerprint }}
+{{ $shoelace := slice $bs $brands $regular $solid $fa $shoelacestyle | resources.Concat "shoelace.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $shoelace.Permalink | absURL }}" integrity="{{ $shoelace.Data.Integrity }}">
 
 <!-- custom -->

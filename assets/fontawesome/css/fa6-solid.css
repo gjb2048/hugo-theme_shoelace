@@ -15,7 +15,7 @@
   font-display: block;
   src:
     url('{{ $woff.Permalink }}') format('woff2'),
-    url('{{ $ttf.Permalink }}) format('truetype');
+    url('{{ $ttf.Permalink }}') format('truetype');
 }
 
 .fa-solid,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
