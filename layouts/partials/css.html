@@ -28,9 +28,18 @@
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-regular.css" | absURL }}">
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-solid.css" | absURL }}">
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fontawesome6.min.css" | absURL }}">
+<!-- {{ $fastylebrands := resources.Get "fontawesome/6.0.0/css/fa6-brands.css" }}
+{{ $fastyleregular := resources.Get "fontawesome/6.0.0/css/fa6-regular.css" }}
+{{ $fastylesolid := resources.Get "fontawesome/6.0.0/css/fa6-solid.css" }}
+{{ $fastylefa := resources.Get "fontawesome/6.0.0/css/fontawesome6.min.css" }}
+{{ $fastyles := slice $fastylebrands $fastyleregular $fastylesolid $fastylefa | resources.Concat "styles/fa.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $fastyles.Permalink | absURL }}" integrity="{{ $fastyles.Data.Integrity }}">
+{{ $fafont := resources.Get "fontawesome/6.0.0/fonts/fa6-brands-400.ttf" }}
+{{ $fafont.Publish }}
+{{ printf "%#v" $fastyles }} -->
 
 <!-- Shoelace -->
-{{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $sass := resources.Get "sass/shoelace.scss" }}
 {{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options | fingerprint }}
 <link rel="stylesheet" href="{{ $shoelacestyle.Permalink | absURL }}" integrity="{{ $shoelacestyle.Data.Integrity }}">
