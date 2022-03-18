@@ -16,9 +16,9 @@
     {{ with .Description }} {{ $.Scratch.Set "subheader" . }} {{ end }}
 
     <div class="row list-item-content">
-        {{ if $.Params.thumbnail }}
+        {{ with $.Resources.GetMatch "thumbnail" }}
         <div class="col-auto">
-            <img src="{{ .Permalink }}{{ $.Params.thumbnail }}">
+            <img src="{{ .Permalink }}">
         </div>
         {{ end }}
         <div class="col">

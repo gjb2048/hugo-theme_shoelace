@@ -1,13 +1,7 @@
-{{ if .Params.background }}
+{{ with .Resources.GetMatch "background" }}
 <style>
     html body {
-        {{ with .Resources.ByType "image" }}
-            {{ range . }}
-                {{ if eq .Name $.Params.background }}
-                    background: url('{{ .Permalink }}');
-                {{ end }}
-            {{ end }}
-        {{ end }}
+        background: url('{{ .Permalink }}');
     }
 </style>
 {{ end }}
@@ -20,7 +14,7 @@
 
 <!-- bootstrap -->
 <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous" -->
-<link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css"  | absURL }}">
+<link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css" | absURL }}">
 
 <!-- font awesome -->
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
@@ -28,15 +22,6 @@
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-regular.css" | absURL }}">
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-solid.css" | absURL }}">
 <link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fontawesome6.min.css" | absURL }}">
-<!-- {{ $fastylebrands := resources.Get "fontawesome/6.0.0/css/fa6-brands.css" }}
-{{ $fastyleregular := resources.Get "fontawesome/6.0.0/css/fa6-regular.css" }}
-{{ $fastylesolid := resources.Get "fontawesome/6.0.0/css/fa6-solid.css" }}
-{{ $fastylefa := resources.Get "fontawesome/6.0.0/css/fontawesome6.min.css" }}
-{{ $fastyles := slice $fastylebrands $fastyleregular $fastylesolid $fastylefa | resources.Concat "styles/fa.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $fastyles.Permalink | absURL }}" integrity="{{ $fastyles.Data.Integrity }}">
-{{ $fafont := resources.Get "fontawesome/6.0.0/fonts/fa6-brands-400.ttf" }}
-{{ $fafont.Publish }}
-{{ printf "%#v" $fastyles }} -->
 
 <!-- Shoelace -->
 {{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}

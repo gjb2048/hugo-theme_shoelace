@@ -3,10 +3,13 @@
     {{ if and (.Content) (.Params.ready) }}
         <div class="homepage-content text-justify">
             <h1 class="text-center">{{ .Title }}</h1>
-            {{ if $.Params.avatar }}
+            {{ $avatar := .Resources.GetMatch "avatar" }}
+            {{ if $avatar }}
             <div>
                 <div class="float-start me-2 mb-2">
-                    <img class="profile profile-mh-200 img-fluid rounded-circle" src="{{ .Permalink }}{{ $.Params.avatar }}">
+                    {{ with $avatar }}
+                    <img class="profile profile-mh-200 img-fluid rounded-circle" src="{{ .Permalink }}">
+                    {{ end }}
                 </div>
                 <div>
                     {{ .Content }}
