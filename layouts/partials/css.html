@@ -30,10 +30,19 @@
 {{ $falic.Publish }}
 
 <!-- Shoelace -->
-{{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+{{ $foptions := (dict "targetPath" "fonts.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+{{ $sassf := resources.Get "sass/fonts.scss" }}
+{{ $shoelacefont := $sassf | resources.ExecuteAsTemplate "style.fonts.scss" . | resources.ToCSS $foptions }}
+{{ $flic := resources.Get "fonts/Open_Sans_Apache_License.txt" }}
+{{ $flic.Publish }}
+{{ $flic := resources.Get "fonts/Roboto_Apache_License.txt" }}
+{{ $flic.Publish }}
+
+
+{{ $soptions := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $sass := resources.Get "sass/shoelace.scss" }}
-{{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options }}
-{{ $shoelace := slice $bs $brands $regular $solid $fa $shoelacestyle | resources.Concat "shoelace.css" | fingerprint }}
+{{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $soptions }}
+{{ $shoelace := slice $bs $brands $regular $solid $fa $shoelacefont $shoelacestyle | resources.Concat "shoelace.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $shoelace.Permalink | absURL }}" integrity="{{ $shoelace.Data.Integrity }}">
 
 <!-- custom -->

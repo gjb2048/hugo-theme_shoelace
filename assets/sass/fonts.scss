@@ -1,0 +1,81 @@
+{{ $woff := resources.Get "fonts/OpenSans-Light-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/OpenSans-LightItalic-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/OpenSans-Regular-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/OpenSans-Italic-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/OpenSans-Bold-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/OpenSans-BoldItalic-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/Roboto-Light-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/Roboto-Regular-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/Roboto-Medium-webfont.woff" | fingerprint }}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
+
+{{ $woff := resources.Get "fonts/Roboto-Black-webfont.woff" | fingerprint }}
+@font-face {
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ $woff.Permalink }}') format('woff2');
+}
