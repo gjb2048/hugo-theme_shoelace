@@ -14,20 +14,27 @@
 
 <!-- bootstrap -->
 <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous" -->
-<link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css" | absURL }}">
+<!-- <link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css" | absURL }}"> -->
+{{ $bs := resources.Get "bootstrap/bootstrap.min.css" }}
+{{ $bslic := resources.Get "bootstrap/Bootstrap_LICENSE.txt" }}
+{{ $bslic.Publish }}
 
 <!-- font awesome -->
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
-<link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-brands.css" | absURL }}">
-<link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-regular.css" | absURL }}">
-<link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fa6-solid.css" | absURL }}">
-<link rel="stylesheet" href="{{ "fontawesome/6.0.0/css/fontawesome6.min.css" | absURL }}">
+
+{{ $brands := resources.Get "fontawesome/css/fa6-brands.css" | resources.ExecuteAsTemplate "style.fa6-brands.css" . }}
+{{ $regular := resources.Get "fontawesome/css/fa6-regular.css" | resources.ExecuteAsTemplate "style.fa6-regular.css" . }}
+{{ $solid := resources.Get "fontawesome/css/fa6-solid.css" | resources.ExecuteAsTemplate "style.fa6-solid.css" . }}
+{{ $fa := resources.Get "fontawesome/css/fontawesome6.min.css" }}
+{{ $falic := resources.Get "fontawesome/Font_Awesome_6_Free_LICENSE.txt" }}
+{{ $falic.Publish }}
 
 <!-- Shoelace -->
 {{ $options := (dict "targetPath" "shoelace.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $sass := resources.Get "sass/shoelace.scss" }}
-{{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options | fingerprint }}
-<link rel="stylesheet" href="{{ $shoelacestyle.Permalink | absURL }}" integrity="{{ $shoelacestyle.Data.Integrity }}">
+{{ $shoelacestyle := $sass | resources.ExecuteAsTemplate "style.shoelace.scss" . | resources.ToCSS $options }}
+{{ $shoelace := slice $bs $brands $regular $solid $fa $shoelacestyle | resources.Concat "shoelace.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $shoelace.Permalink | absURL }}" integrity="{{ $shoelace.Data.Integrity }}">
 
 <!-- custom -->
 {{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}

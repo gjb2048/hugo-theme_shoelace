@@ -6,14 +6,16 @@
 :root, :host {
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free"; }
 
+{{ $woff := resources.Get "fontawesome/fonts/fa6-solid-900.woff2" | fingerprint }}
+{{ $ttf := resources.Get "fontawesome/fonts/fa6-solid-900.ttf" | fingerprint }}
 @font-face {
   font-family: 'Font Awesome 6 Free';
   font-style: normal;
   font-weight: 900;
   font-display: block;
   src:
-    url('../fonts/fa6-solid-900.woff2') format('woff2'),
-    url('../fonts/fa6-solid-900.ttf') format('truetype');
+    url('{{ $woff.Permalink }}') format('woff2'),
+    url('{{ $ttf.Permalink }}) format('truetype');
 }
 
 .fa-solid,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
