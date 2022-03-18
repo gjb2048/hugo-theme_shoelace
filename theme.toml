@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/gjb2048/hugo-theme_shoelace/blob/master/LICENSE.md"
 description = "Personal blog theme powered by Hugo"
 homepage = "http://github.com/gjb2048/hugo-theme_shoelace/"
-tags = ["blog", "minimal", "personal", "responsive"]
+tags = ["blog", "minimal", "personal", "responsive", "bootstrap", "fontawesome"]
 features = ["responsive"]
 min_version = "0.80.0"
 

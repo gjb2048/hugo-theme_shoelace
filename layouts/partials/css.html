@@ -1,9 +1,15 @@
-{{ with .Resources.GetMatch "background" }}
+{{ $background := .Resources.GetMatch "background" }}
+{{ if $background }}
+{{ with $background }}
 <style>
     html body {
         background: url('{{ .Permalink }}');
     }
 </style>
+{{ end }}
+{{ .Scratch.Set "hasbackground" true }}
+{{ else }}
+{{ .Scratch.Set "hasbackground" false }}
 {{ end }}
 
 <!-- main -->

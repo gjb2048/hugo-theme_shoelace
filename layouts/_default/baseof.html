@@ -35,7 +35,7 @@
         {{ partial "head-close" . }}
     </head>
 
-    <body>
+    <body{{ if .Scratch.Get "hasbackground" }} class="hasbackground"{{ end }}>
         {{ partial "body-open" . }}
         {{ if not .Page.IsHome }}
             {{ partial "navbar" . }}
@@ -45,11 +45,11 @@
             {{ printf "%#v" .Params }}
             {{ printf "%#v" .Page.Permalink }}
             {{ block "main" . }}{{ end }}
+            <footer{{ if not .Page.IsHome }} class="hasnavbar"{{ end }}>
+                <p class="copyright text-muted text-center"><span class="fa-solid fa-copyright me-1" title="Copyright" aria-hidden="true"></span><span class="sr-only">Copyright</span>{{.Site.Params.author}}<br>{{ .Site.Params.copyright | default "All rights reserved. Powered by [Hugo](https://gohugo.io) and [Shoelace](https://github.com/gjb2048/hugo-theme_shoelace)." | markdownify }}</p>
+            </footer>
         </main>
 
-        <footer{{ if not .Page.IsHome }} class="hasnavbar"{{ end }}>
-            <p class="copyright text-muted text-center"><span class="fa-solid fa-copyright me-1" title="Copyright" aria-hidden="true"></span><span class="sr-only">Copyright</span>{{.Site.Params.author}}<br>{{ .Site.Params.copyright | default "All rights reserved. Powered by [Hugo](https://gohugo.io) and [Shoelace](https://github.com/gjb2048/hugo-theme_shoelace)." | markdownify }}</p>
-        </footer>
 
         {{ partial "body-close" . }}
         
