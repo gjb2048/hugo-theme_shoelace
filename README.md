@@ -37,7 +37,7 @@ I recommend you use the theme's archetypes so now delete your site's `archetypes
 
 ## Run demo
 
-hugo server --themesDir ../..
+hugo server --themesDir=../.. -disableFastRender
 
 
 

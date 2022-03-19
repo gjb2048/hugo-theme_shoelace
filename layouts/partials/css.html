@@ -2,7 +2,7 @@
 {{ if $background }}
 {{ with $background }}
 <style>
-    html body {
+    body.hasbackground {
         background: url('{{ .Permalink }}');
     }
 </style>
@@ -21,7 +21,12 @@
 <!-- bootstrap -->
 <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous" -->
 <!-- <link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css" | absURL }}"> -->
-{{ $bs := resources.Get "bootstrap/bootstrap.min.css" }}
+{{ if .Site.Params.fullbs }}
+{{ .Scratch.Set "bs" "bootstrap/bootstrap.min.css" }}
+{{ else }}
+{{ .Scratch.Set "bs" "bootstrap/bootstrap-shoelace.min.css" }}
+{{ end }}
+{{ $bs := resources.Get (.Scratch.Get "bs") }}
 {{ $bslic := resources.Get "bootstrap/Bootstrap_LICENSE.txt" }}
 {{ $bslic.Publish }}
 

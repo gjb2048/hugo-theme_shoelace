@@ -14,7 +14,8 @@ enableRobotsTXT = true
     showBorder = true
     backgroundColour = "#fcfcfc"
     hasBackgroundColour = "#fcfcfce6"
-    font = "Open Sans" # Should match the name in the assets/scss/_fonts file.
+    font = "Open Sans" # Should match the name in the assets/scss/fonts file.
+    fullbs = true # Set to true to use the full version of Bootstrap with both the CSS and JS.
 
 [markup]
   [markup.highlight]
