@@ -1,17 +1,17 @@
 {{ if or .Paginator.HasPrev .Paginator.HasNext }}
 
-<div class="pages">
+<div class="pages d-flex flex-column">
 
     {{ if .Paginator.HasPrev }}
-        <a class="icon pages-icon" href="{{ .Paginator.Prev.URL }}" rel="prev">
-            <span class="fa-solid fa-angle-left" title="Previous" aria-hidden="true"></span>
+        <a class="icon pages-icon align-self-start" href="{{ .Paginator.Prev.URL }}" rel="prev">
+            <span class="fa-solid fa-angle-left fa-xl" title="Previous" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a class="icon pages-icon" href="{{ .Paginator.Next.URL }}" rel="next">
-            <span class="fa-solid fa-angle-right" title="Next" aria-hidden="true"></span>
+        <a class="icon pages-icon align-self-end" href="{{ .Paginator.Next.URL }}" rel="next">
+            <span class="fa-solid fa-angle-right fa-xl" title="Next" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
     {{ end }}
