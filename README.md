@@ -40,7 +40,6 @@ I recommend you use the theme's archetypes so now delete your site's `archetypes
 hugo server --themesDir=../.. -disableFastRender
 
 
-
 ## Features
 
 You can tweak the look of the theme to suit your needs in a number of ways:
@@ -71,5 +70,5 @@ The theme uses local fonts. To change the font:
 
 ## Refs
 
-https://blog.fullstackdigital.com/how-to-cache-bust-and-concatenate-js-and-sass-files-with-hugo-in-2018-9266fd3c411e
-https://blog.fullstackdigital.com/how-to-use-hugo-template-variables-in-scss-files-in-2018-b8a834accce
+1. [How to cache-bust and concatenate JS and SASS files with Hugo in 2018](https://blog.fullstackdigital.com/how-to-cache-bust-and-concatenate-js-and-sass-files-with-hugo-in-2018-9266fd3c411e)
+1. [How to use Hugo template variables in SCSS files (in 2018)](https://blog.fullstackdigital.com/how-to-use-hugo-template-variables-in-scss-files-in-2018-b8a834accce)
