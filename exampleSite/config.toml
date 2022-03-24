@@ -2,13 +2,13 @@ baseURL = ""
 languageCode = "en-gb"
 title = "Shoelace"
 theme = "shoelace"
-disqusShortname = "username" # delete this to disable disqus comments
+disqusShortname = "" # delete this to disable disqus comments otherwise 'username'
 googleAnalytics = ""
 enableRobotsTXT = true
 
 [params]
     author = "Gareth J Barnard"
-    description = "Personal blog theme powered by Hugo"
+    description = "Personal blog theme evolved from Minimal and powered by Hugo"
     githubUsername = "#"
     accent = "#fc0"
     showBorder = true

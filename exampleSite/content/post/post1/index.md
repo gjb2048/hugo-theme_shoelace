@@ -1,5 +1,5 @@
 ---
-title: "Post One"
+title: "Post one"
 date: 2022-03-16
 summary: "This is the first test post"
 tags: ["go", "golang", "hugo", "shoelace"]
