@@ -18,14 +18,17 @@ $accent-light: lighten($accent, 5%);
 body {
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: var(--bs-gutter-y,.75rem);
+    padding-top: var(--bs-gutter-y,.75rem);
 
     &.hasbackground {
         background-size: cover;
-        main {
+        .container {
             background-color: {{ .Site.Params.hasBackgroundColour | default "#fcfcfce6" }};
             border-radius: 10px;
+            &.hasnavbar {
+                margin-bottom: 3rem;
+            }
         }
     }
 }
@@ -33,14 +36,8 @@ body {
 footer,
 main {
     margin: auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-footer {
-    &.hasnavbar {
-        padding-bottom: 5rem;
-    }
+    padding-bottom: var(--bs-gutter-y,.75rem);
+    padding-top: var(--bs-gutter-y,.75rem);
 }
 
 // Homepage
@@ -101,6 +98,12 @@ a {
     }
 }
 
+// Navbar
+.navbar {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
 .navbar-light .navbar-nav .nav-link {
     .icon {
         color: $accent-dark;
@@ -114,7 +117,6 @@ a {
 // Copyright message
 .copyright {
     font-size: 0.75rem;
-    margin: 15px 0;
 }
 
 // Paginator
@@ -138,12 +140,6 @@ a {
 .item-tag {
     background-color: var(--accent);
     margin-right: 0.25rem;
-}
-
-// Navigation icons
-.navbar-icon {
-    display: inline-block !important;
-    font-size: 125%;
 }
 
 // Colored borders at top/bottom of page

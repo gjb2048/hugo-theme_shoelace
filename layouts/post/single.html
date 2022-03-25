@@ -1,8 +1,8 @@
 {{ define "main" }}
-<main class="container">
+<main>
     <div>
         <h1>{{ .Title }}</h1>
-        <p>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</p>
+        <p>{{ .Date.Format (.Site.Params.dateFormat | default "Monday, 2 January 2006") }}</p>
         {{ partial "tags" . }}
     </div>
 

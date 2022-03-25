@@ -2,9 +2,9 @@
 {{ if $background }}
 {{ with $background }}
 <style>
-    body.hasbackground {
-        background: url('{{ .Permalink }}');
-    }
+body.hasbackground {
+    background-image: url('{{ .Permalink }}');
+}
 </style>
 {{ end }}
 {{ .Scratch.Set "hasbackground" true }}
