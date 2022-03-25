@@ -13,7 +13,7 @@
     <!-- Related posts -->
     {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
     {{ if $related }}
-        <h4 class="page-header">Related</h4>
+        <h2 class="page-header">Related</h2>
         <div class="row">
             {{ range $related }} {{ partial "list-item" . }} {{ end }}
         </div>
@@ -21,7 +21,7 @@
 
     <!-- Disquis comments -->
     {{ if and .Site.DisqusShortname (not .Params.disableComments) }}
-        <h4 class="page-header">Comments</h4>
+        <h2 class="page-header">Comments</h2>
         {{ template "_internal/disqus.html" . }}
     {{ end }}
 </main>
