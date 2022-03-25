@@ -12,15 +12,7 @@
 {{ .Scratch.Set "hasbackground" false }}
 {{ end }}
 
-<!-- main -->
-<!-- <link rel="stylesheet" href="{{ "css/main.css" | absURL }}"> -->
-
-<!-- google fonts -->
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.font }}"> -->
-
 <!-- bootstrap -->
-<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous" -->
-<!-- <link rel="stylesheet" href="{{ "bootstrap/5.1.3/bootstrap.min.css" | absURL }}"> -->
 {{ if .Site.Params.fullbs }}
 {{ .Scratch.Set "bs" "bootstrap/bootstrap.min.css" }}
 {{ else }}
@@ -31,7 +23,6 @@
 {{ $bslic.Publish }}
 
 <!-- font awesome -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
 
 {{ $brands := resources.Get "fontawesome/css/fa6-brands.css" | resources.ExecuteAsTemplate "style.fa6-brands.css" . }}
 {{ $regular := resources.Get "fontawesome/css/fa6-regular.css" | resources.ExecuteAsTemplate "style.fa6-regular.css" . }}
