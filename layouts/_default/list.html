@@ -1,9 +1,11 @@
 {{ define "main" }}
-<div class="row">
-    <h2 class="col-12">{{ .Title }}</h2>
-</div>
-<div class="row">
-    {{ range (.Paginator 3).Pages }} {{ partial "list-item" . }} {{ end }}
-</div>
-{{ partial "paginator" . }}
+<main class="container text-center text-md-start">
+    <div class="row">
+        <h2 class="col-12">{{ .Title }}</h2>
+    </div>
+    <div class="row">
+        {{ range (.Paginator 3).Pages }} {{ partial "list-item" . }} {{ end }}
+    </div>
+    {{ partial "paginator" . }}
+</main>
 {{ end }}

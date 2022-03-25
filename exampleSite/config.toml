@@ -9,7 +9,6 @@ enableRobotsTXT = true
 [params]
     author = "Gareth J Barnard"
     description = "Personal blog theme evolved from Minimal and powered by Hugo"
-    githubUsername = "#"
     accent = "#fc0"
     showBorder = true
     backgroundColour = "#fcfcfc"
@@ -61,9 +60,9 @@ menu = ['main', 'icon']
     [menu.main.params]
         icon = "fa-solid fa-brush"
 
-# Social icons to be shown on the right-hand side of the navigation bar.
-# The "name" field should match the name of the icon in Font Awesome.
-# The list of available icons can be found at http://fontawesome.io/icons.
+# Social icons are shown on the right-hand side of the navigation bar.
+# The "name" field should match the name of Font Awesome icon.
+# The list of available icons can be found at https://fontawesome.com/search?m=free.
 
 [[menu.icon]]
     url = "mailto:me@example.com"

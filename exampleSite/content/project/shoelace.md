@@ -5,6 +5,6 @@ repo: "hugo-theme_shoelace" # delete this line if you want a blog-like page
 repoHost: "github"
 repoUsername: "gjb2048"
 tags: ["go", "golang", "hugo", "shoelace"]
-weight: 0
+weight: 1
 draft: false
 ---

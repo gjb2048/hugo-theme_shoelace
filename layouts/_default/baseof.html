@@ -7,9 +7,9 @@
         {{ hugo.Generator }}
         <title>{{ .Title }}</title>
         {{ if .Site.Params.favicon }}
-            <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+            <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}">
         {{ else }}
-            <link rel="icon" href="{{ "images/icon.png" | absURL }}">
+            <link rel="shortcut icon" href="{{ "images/icon.png" | absURL }}">
         {{ end }}
         {{ partial "css" . }}
         {{ partial "js" . }}
@@ -28,10 +28,6 @@
             </script>
         {{ end }}
 
-        {{ if .Site.Params.MathJax | default false }}
-            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        {{ end }}
-
         {{ partial "head-close" . }}
     </head>
 
@@ -41,15 +37,12 @@
             {{ partial "navbar" . }}
         {{ end }}
 
-        <main class="container">
-            {{ block "main" . }}{{ end }}
-            <footer{{ if not .Page.IsHome }} class="hasnavbar"{{ end }}>
-                <p class="copyright text-muted text-center"><span class="fa-solid fa-copyright me-1" title="Copyright" aria-hidden="true"></span><span class="sr-only">Copyright</span>{{.Site.Params.author}}<br>{{ .Site.Params.copyright | default "All rights reserved. Powered by [Hugo](https://gohugo.io) and [Shoelace](https://github.com/gjb2048/hugo-theme_shoelace)." | markdownify }}</p>
-            </footer>
-        </main>
+        {{ block "main" . }}{{ end }}
+        <footer{{ if not .Page.IsHome }} class="hasnavbar"{{ end }}>
+            <p class="copyright text-muted text-center"><span class="fa-solid fa-copyright me-1" title="Copyright" aria-hidden="true"></span><span class="sr-only">Copyright</span>{{.Site.Params.author}}<br>{{ .Site.Params.copyright | default "All rights reserved. Powered by [Hugo](https://gohugo.io) and [Shoelace](https://github.com/gjb2048/hugo-theme_shoelace)." | markdownify }}</p>
+        </footer>
 
         {{ partial "body-close" . }}
-        
     </body>
 
 </html>

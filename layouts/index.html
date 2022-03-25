@@ -1,35 +1,37 @@
 {{ define "main" }}
-<div class="intro">
-    {{ if and (.Content) (.Params.ready) }}
-        <div class="homepage-content text-justify">
-            <h1 class="text-center">{{ .Title }}</h1>
-            {{ $avatar := .Resources.GetMatch "avatar" }}
-            {{ if $avatar }}
-            <div>
-                <div class="float-start me-2 mb-2">
-                    {{ with $avatar }}
-                    <img class="profile profile-mh-200 img-fluid rounded-circle" src="{{ .Permalink }}">
-                    {{ end }}
-                </div>
+<main class="container">
+    <div class="intro">
+        {{ if and (.Content) (.Params.ready) }}
+            <div class="homepage-content text-justify">
+                <h1 class="text-center">{{ .Title }}</h1>
+                {{ $avatar := .Resources.GetMatch "avatar" }}
+                {{ if $avatar }}
                 <div>
-                    {{ .Content }}
+                    <div class="float-start me-2 mb-2">
+                        {{ with $avatar }}
+                        <img class="profile profile-mh-200 img-fluid rounded-circle" src="{{ .Permalink }}">
+                        {{ end }}
+                    </div>
+                    <div>
+                        {{ .Content }}
+                    </div>
                 </div>
+                {{ else }}
+                    {{ .Content }}
+                {{ end }}
             </div>
-            {{ else }}
-                {{ .Content }}
-            {{ end }}
+        {{ else }}
+        {{ with .Site.Params.profilePic }}
+            <div class="text-center">
+                <img class="profile profile-10 img-fluid rounded-circle" src="{{ . }}"> {{ end }}
+                <h1>{{ .Site.Title }}</h1>
+                <h2>{{ markdownify .Site.Params.Description }}</h2>
+            </div>
+        {{ end }}
+        <div class="row">
+            {{ partial "navline" . }}
+            {{ partial "navsocial" . }}
         </div>
-    {{ else }}
-    {{ with .Site.Params.profilePic }}
-        <div class="text-center">
-            <img class="profile profile-10 img-fluid rounded-circle" src="{{ . }}"> {{ end }}
-            <h1>{{ .Site.Title }}</h1>
-            <h2>{{ markdownify .Site.Params.Description }}</h2>
-        </div>
-    {{ end }}
-    <div class="row">
-        {{ partial "navline" . }}
-        {{ partial "navsocial" . }}
     </div>
-</div>
+</main>
 {{ end }}

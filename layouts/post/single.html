@@ -1,12 +1,14 @@
 {{ define "main" }}
+<main class="container">
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h3>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</h3>
+        {{ partial "tags" . }}
+    </div>
 
-<div>
-    <h2>{{ .Title }}</h2>
-    <h5>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</h5>
-    {{ partial "tags" . }}
-</div>
-
-<div align="start" class="content">{{ .Content }}</div>
+    <div align="start" class="content">
+        {{ .Content }}
+    </div>
 
 <!-- Related posts -->
 <!--
@@ -17,10 +19,10 @@
 {{ end }}
 -->
 
-<!-- Disquis comments -->
-{{ if and .Site.DisqusShortname (not .Params.disableComments) }}
-    <h4 class="page-header">Comments</h4>
-    {{ template "_internal/disqus.html" . }}
-{{ end }}
-
+    <!-- Disquis comments -->
+    {{ if and .Site.DisqusShortname (not .Params.disableComments) }}
+        <h4 class="page-header">Comments</h4>
+        {{ template "_internal/disqus.html" . }}
+    {{ end }}
+</main>
 {{ end }}

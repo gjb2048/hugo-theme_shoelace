@@ -37,8 +37,17 @@ I recommend you use the theme's archetypes so now delete your site's `archetypes
 
 ## Run demo
 
-hugo server --themesDir=../.. -disableFastRender
+In the 'exampleSite' folder....
 
+### Preview
+
+hugo server --themesDir=../..
+
+### When making changes
+
+```
+hugo server --themesDir=../.. -disableFastRender
+```
 
 ## Features
 
