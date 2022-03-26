@@ -16,7 +16,7 @@
         <ul class="navbar-nav flex-row">
             {{ range sort .Site.Menus.icon }}
             <li class="nav-item navbar-icon me-2">
-                <a class="nav-link" href="{{ .URL }}">
+                <a class="nav-link" href="{{ .URL }}" target="_blank">
                     <span class="{{ .Params.icon }} fa-lg nav-link icon" title="{{ .Name }}" aria-hidden="true"></span>
                     <span class="sr-only">{{ .Name }}</span>
                 </a>

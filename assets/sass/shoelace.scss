@@ -26,10 +26,11 @@ body {
         .container {
             background-color: {{ .Site.Params.hasBackgroundColour | default "#fcfcfce6" }};
             border-radius: 10px;
-            &.hasnavbar {
-                margin-bottom: 3rem;
-            }
         }
+    }
+
+    .container.hasnavbar {
+        margin-bottom: 3rem;
     }
 }
 

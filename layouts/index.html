@@ -21,9 +21,10 @@
                 {{ end }}
             </div>
         {{ else }}
-        {{ with .Site.Params.profilePic }}
             <div class="text-center">
-                <img class="profile profile-10 img-fluid rounded-circle" src="{{ . }}"> {{ end }}
+                {{ with .Site.Params.profilePic }}
+                <img class="profile profile-10 img-fluid rounded-circle" src="{{ . }}">
+                {{ end }}
                 <h1>{{ .Site.Title }}</h1>
                 <h2>{{ markdownify .Site.Params.Description }}</h2>
             </div>

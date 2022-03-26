@@ -59,6 +59,13 @@ menu = ['main', 'icon']
     [menu.main.params]
         icon = "fa-solid fa-brush"
 
+[[menu.main]]
+    url = "/privacy/"
+    name = "Privacy"
+    weight = 6
+    [menu.main.params]
+        icon = "fa-solid fa-user-secret"
+
 # Social icons are shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of Font Awesome icon.
 # The list of available icons can be found at https://fontawesome.com/search?m=free.
@@ -71,7 +78,7 @@ menu = ['main', 'icon']
         icon = "fa-solid fa-envelope"
 
 [[menu.icon]]
-    url = "https://github.com/username/"
+    url = "https://github.com/gjb2048/hugo-theme_shoelace"
     name = "Github"
     weight = 2
     [menu.icon.params]
@@ -85,15 +92,22 @@ menu = ['main', 'icon']
         icon = "fa-brands fa-twitter"
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
-    name = "Linkedin"
+    url = "https://www.slack.com/"
+    name = "Slack"
     weight = 4
     [menu.icon.params]
-        icon = "fa-brands fa-linkedin"
+        icon = "fa-brands fa-slack"
 
 [[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
-    name = "Stackoverflow"
+    url = "https://getbootstrap.com"
+    name = "Bootstrap"
     weight = 5
     [menu.icon.params]
-        icon = "fa-brands fa-stack-overflow"
+        icon = "fa-brands fa-bootstrap"
+
+[[menu.icon]]
+    url = "https://sass-lang.com"
+    name = "Sass"
+    weight = 6
+    [menu.icon.params]
+        icon = "fa-brands fa-sass"
