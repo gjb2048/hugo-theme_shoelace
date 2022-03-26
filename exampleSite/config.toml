@@ -1,9 +1,8 @@
 baseURL = ""
 languageCode = "en-gb"
-title = "Shoelace"
+title = "Shoelace example site"
 theme = "shoelace"
 disqusShortname = "" # delete this to disable disqus comments otherwise 'username'
-googleAnalytics = ""
 enableRobotsTXT = true
 
 [params]

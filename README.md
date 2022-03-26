@@ -23,7 +23,15 @@ $ git submodule update --remote themes/shoelace
 
 ## Configuration
 
-After installation, take a look at the `exampleSite` folder inside `themes/shoelace`.
+After installation, take a look at the `exampleSite` folder inside `themes/shoelace`.  When inside the `exampleSite` folder then you can run:
+
+```
+hugo server --themesDir=../..
+```
+
+To serve the example site locally.
+
+## Getting started
 
 To get started, copy the `config.toml` file inside `exampleSite` to the root of your Hugo site:
 
@@ -41,7 +49,9 @@ In the 'exampleSite' folder....
 
 ### Preview
 
+```
 hugo server --themesDir=../..
+```
 
 ### When making changes
 
@@ -58,15 +68,6 @@ You can tweak the look of the theme to suit your needs in a number of ways:
 - You can also change the background colour by using `backgroundColor`.
 
 - Add colored 5px borders at the top and bottom of pages by setting `showBorder` to `true`.
-
-For best results, I recommend you use a dark accent colour with a light background, for example:
-
-```toml
-[params]
-    accent = "red"
-    showBorder = true
-    backgroundColor = "white"
-```
 
 ### Fonts
 

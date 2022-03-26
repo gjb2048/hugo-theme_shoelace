@@ -8,5 +8,14 @@
         </a>
     </li>
     {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+    {{ $title := delimit (slice $.Site.Title $.Page.Title "RSS Feed") " "}}
+    <li class="nav-item">
+        <a href="{{ .RelPermalink }}" class="nav-link" rel="feed" type="{{ .MediaType.Type }}" title="{{ $title }}" target="_blank">
+            <span class="fa-solid fa-square-rss fa-lg nav-item icon" title="{{ $title }}" aria-hidden="true"></span>
+            <span class="sr-only">{{ $title }}</span>
+        </a>
+    </li>
+    {{ end }}
 </ul>
 {{ end }}
