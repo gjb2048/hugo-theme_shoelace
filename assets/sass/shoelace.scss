@@ -66,8 +66,14 @@ main {
         width: 10vh;
     }
 
-    &.profile-mh-200 {
+    &.profile-mh {
         max-height: 200px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profile.profile-mh {
+        max-height: 100px;
     }
 }
 

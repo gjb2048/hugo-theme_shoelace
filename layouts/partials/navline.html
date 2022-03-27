@@ -3,8 +3,8 @@
         {{ range sort .Site.Menus.main }}
         <li class="nav-item">
             <a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
-                <span class="{{ .Params.icon }} me-2 icon" aria-hidden="true"></span>
-                <span class="d-none d-md-inline me-2" aria-hidden="true">{{ .Name }}</span>
+                <span class="{{ .Params.icon }} icon" aria-hidden="true"></span>
+                <span class="d-none d-md-inline" aria-hidden="true">{{ .Name }}</span>
                 <span class="sr-only">{{ .Name }}</span>
             </a>
         </li>

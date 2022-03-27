@@ -3,9 +3,10 @@
         {{ if .Site.Menus.main }}
         <ul class="navbar-nav flex-row me-auto">
         {{ range sort .Site.Menus.main }}
-            <li class="nav-item"><a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
-                <span class="{{ .Params.icon }} me-2 icon" aria-hidden="true"></span>
-                <span class="d-none d-md-inline me-2" aria-hidden="true">{{ .Name }}</span>
+        <li class="nav-item">
+            <a class="nav-link me-3 me-md-2" href="{{ .URL }}" title="{{ .Name }}">
+                <span class="{{ .Params.icon }} icon" aria-hidden="true"></span>
+                <span class="d-none d-md-inline" aria-hidden="true">{{ .Name }}</span>
                 <span class="sr-only">{{ .Name }}</span>
             </a>
         </li>
@@ -15,7 +16,7 @@
         {{ if .Site.Menus.icon }}
         <ul class="navbar-nav flex-row">
             {{ range sort .Site.Menus.icon }}
-            <li class="nav-item navbar-icon me-2">
+            <li class="nav-item navbar-icon me-3 me-md-2">
                 <a class="nav-link" href="{{ .URL }}" target="_blank">
                     <span class="{{ .Params.icon }} fa-lg nav-link icon" title="{{ .Name }}" aria-hidden="true"></span>
                     <span class="sr-only">{{ .Name }}</span>
@@ -24,7 +25,7 @@
             {{ end }}
             {{ with .OutputFormats.Get "RSS" }}
             {{ $title := delimit (slice $.Site.Title $.Page.Title "RSS Feed") " "}}
-            <li class="nav-item navbar-icon me-2">
+            <li class="nav-item navbar-icon me-3 me-md-2">
                 <a href="{{ .RelPermalink }}" class="nav-link" rel="feed" type="{{ .MediaType.Type }}" title="{{ $title }}" target="_blank">
                     <span class="fa-solid fa-square-rss fa-lg nav-item icon" title="{{ $title }}" aria-hidden="true"></span>
                     <span class="sr-only">{{ $title }}</span>

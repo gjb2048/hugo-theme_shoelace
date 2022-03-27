@@ -9,7 +9,7 @@ min_version = "0.80.0"
 
 [author]
   name = "Gareth J Barnard"
-  homepage = "https://gjb2048.github.io/"
+  homepage = "https://gjb2048.github.io/hugo-theme_shoelace/"
 
 [original]
   name = "Calin Tataru"
