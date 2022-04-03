@@ -1,0 +1,27 @@
+{{ $headerbackground := .Resources.GetMatch "headerbackground" }}
+<header class="text-center{{ if $headerbackground }} text-light{{ end }} mb-2">
+    {{ with $headerbackground }}
+    <style>
+    header {
+        background-image: url('{{ .Permalink }}');
+    }
+    </style>
+    {{ end }}
+    {{ $headeravatar := .Resources.GetMatch "headeravatar" }}
+    {{ if $headeravatar }}
+    <div class="mb-md-2">
+        {{ with $headeravatar }}
+        <img class="profile profile-mh img-fluid rounded-circle" src="{{ .Permalink }}" title="Avatar">
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ with .Params.headertitle }}
+    <h1>{{ . }}</h1>
+    {{ end }}
+    {{ with .Params.headersub }}
+    <h2>{{ . }}</h2>
+    {{ end }}
+    {{ if .Params.headersocial }}
+    {{ partial "navsocial" . }}
+    {{ end }}
+</header>

@@ -11,7 +11,6 @@ $accent-dark: darken($accent, 5%);
 $accent-light: lighten($accent, 5%);
 :root {
     --accent: {{ .Site.Params.accent | default "#fc0" }};
-    --accentd: @debug $accent-dark;
     --border-width: {{ if .Site.Params.showBorder | default false }} 5px {{ else }} 0 {{ end }};
 }
 
@@ -19,7 +18,6 @@ body {
     display: flex;
     flex-direction: column;
     padding-bottom: var(--bs-gutter-y,.75rem);
-    padding-top: var(--bs-gutter-y,.75rem);
 
     &.hasbackground {
         background-size: cover;
@@ -35,10 +33,15 @@ body {
 }
 
 footer,
+header,
 main {
-    margin: auto;
     padding-bottom: var(--bs-gutter-y,.75rem);
     padding-top: var(--bs-gutter-y,.75rem);
+}
+
+footer,
+main {
+    margin: auto;
 }
 
 // Homepage
@@ -102,6 +105,13 @@ a {
             color: var(--bs-body-color);
             text-decoration: underline dotted var(--accent);
         }
+    }
+    .text-light & .icon {
+        color: rgba(var(--bs-light-rgb),var(--bs-text-opacity)) !important;
+    }
+    .text-light &:hover .icon,
+    .text-light &:focus .icon {
+        color: rgba(var(--bs-white-rgb),var(--bs-text-opacity)) !important;
     }
 }
 

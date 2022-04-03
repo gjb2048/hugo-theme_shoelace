@@ -1,11 +1,18 @@
 ---
 title: About me
 description: The main index file _index.md
+headertitle: Denise E Bug
+headersub: Software Tester
+headersocial: true
 resources:
 - name : 'avatar'
   src : 'mylogo.webp'
 - name : 'background'
   src : 'mybackground.webp'
+- name : 'headeravatar'
+  src : 'myheaderlogo.webp'
+- name : 'headerbackground'
+  src : 'myheaderbackground.webp'
 ready: true
 ---
 

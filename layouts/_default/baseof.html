@@ -12,6 +12,15 @@
             <link rel="shortcut icon" href="{{ "images/icon.png" | absURL }}">
         {{ end }}
         {{ partial "css" . }}
+        {{ $background := .Resources.GetMatch "background" }}
+        {{ with $background }}
+        <style>
+        body.hasbackground {
+            background-image: url('{{ .Permalink }}');
+        }
+        </style>
+        {{ end }}
+       
         {{ partial "js" . }}
         {{ with .OutputFormats.Get "RSS" }}
             <link href="{{ .RelPermalink }}" rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" />
@@ -21,12 +30,12 @@
         {{ partial "head-close" . }}
     </head>
 
-    <body{{ if .Scratch.Get "hasbackground" }} class="hasbackground"{{ end }}>
+    <body{{ if $background }} class="hasbackground"{{ end }}>
         {{ partial "body-open" . }}
         {{ if not .Page.IsHome }}
             {{ partial "navbar" . }}
         {{ end }}
-
+        {{ block "header" . }}{{ end }}
         <div class="container{{ if not .Page.IsHome }} hasnavbar{{ end }}">
             {{ block "main" . }}{{ end }}
             <footer>
