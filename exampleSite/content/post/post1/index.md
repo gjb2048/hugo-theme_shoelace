@@ -4,6 +4,9 @@ date: 2022-03-16
 summary: "This is the first test post"
 tags: ["go", "golang", "hugo", "shoelace"]
 resources:
+- name : 'avatar'
+  src : 'images/mylogo.webp'
+  title: 'My logo'
 - name : 'background'
   src : 'images/mybackground.webp'
 - name : 'thumbnail'

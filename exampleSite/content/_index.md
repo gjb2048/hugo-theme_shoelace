@@ -7,12 +7,15 @@ headersocial: true
 resources:
 - name : 'avatar'
   src : 'mylogo.webp'
+  title: 'My logo'
 - name : 'background'
   src : 'mybackground.webp'
 - name : 'headeravatar'
   src : 'myheaderlogo.webp'
+  title: 'Me'
 - name : 'headerbackground'
   src : 'myheaderbackground.webp'
+  title: 'Me'
 ready: true
 ---
 

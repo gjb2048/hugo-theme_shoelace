@@ -1,0 +1,15 @@
+{{ $avatar := .Resources.GetMatch "avatar" }}
+{{ if $avatar }}
+<div>
+    <div class="float-md-start text-center me-md-2 mb-md-2">
+        {{ with $avatar }}
+        <img class="profile profile-mh img-fluid rounded-circle" src="{{ .Permalink }}" title="{{ .Title }}">
+        {{ end }}
+    </div>
+    <div>
+        {{ .Content }}
+    </div>
+</div>
+{{ else }}
+    {{ .Content }}
+{{ end }}

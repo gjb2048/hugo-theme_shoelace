@@ -1,5 +1,5 @@
 {{ $headerbackground := .Resources.GetMatch "headerbackground" }}
-<header class="text-center{{ if $headerbackground }} text-light{{ end }} mb-2">
+<header class="text-center{{ if $headerbackground }} text-light headerbackground{{ end }} mb-2">
     {{ with $headerbackground }}
     <style>
     header {
@@ -11,7 +11,7 @@
     {{ if $headeravatar }}
     <div class="mb-md-2">
         {{ with $headeravatar }}
-        <img class="profile profile-mh img-fluid rounded-circle" src="{{ .Permalink }}" title="Avatar">
+        <img class="profile profile-mh img-fluid rounded-circle" src="{{ .Permalink }}" title="{{ .Title }}">
         {{ end }}
     </div>
     {{ end }}
