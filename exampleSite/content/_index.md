@@ -5,11 +5,6 @@ headertitle: Denise E Bug
 headersub: Software Tester
 headersocial: true
 resources:
-- name : 'avatar'
-  src : 'mylogo.webp'
-  title: 'My logo'
-- name : 'background'
-  src : 'mybackground.webp'
 - name : 'headeravatar'
   src : 'myheaderlogo.webp'
   title: 'Me'

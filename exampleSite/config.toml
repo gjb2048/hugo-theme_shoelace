@@ -9,11 +9,12 @@ enableRobotsTXT = true
     author = "Gareth J Barnard"
     description = "Personal blog theme evolved from Minimal and powered by Hugo"
     accent = "#fc0"
-    showBorder = true
     backgroundColour = "#fcfcfc"
     hasBackgroundColour = "#fcfcfce6"
     font = "Open Sans" # Should match the name in the assets/scss/fonts file.
     fullbs = false # Set to true to use the full version of Bootstrap with both the CSS and JS.
+    showBorder = true
+    socialOnNavbar = false
 
 [markup]
   [markup.highlight]

@@ -1,19 +1,19 @@
 <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         {{ if .Site.Menus.main }}
-        <ul class="navbar-nav flex-row me-auto">
-        {{ range sort .Site.Menus.main }}
-        <li class="nav-item">
-            <a class="nav-link me-3 me-md-2" href="{{ .URL }}" title="{{ .Name }}">
-                <span class="{{ .Params.icon }} icon" aria-hidden="true"></span>
-                <span class="d-none d-md-inline" aria-hidden="true">{{ .Name }}</span>
-                <span class="sr-only">{{ .Name }}</span>
-            </a>
-        </li>
-        {{ end }}
+        <ul class="navbar-nav flex-row m{{if eq .Site.Params.socialOnNavbar true}}e{{ end }}-auto">
+            {{ range sort .Site.Menus.main }}
+            <li class="nav-item">
+                <a class="nav-link me-3 me-md-2" href="{{ .URL }}" title="{{ .Name }}">
+                    <span class="{{ .Params.icon }} icon" aria-hidden="true"></span>
+                    <span class="d-none d-md-inline" aria-hidden="true">{{ .Name }}</span>
+                    <span class="sr-only">{{ .Name }}</span>
+                </a>
+            </li>
+            {{ end }}
         </ul>
         {{ end }}
-        {{ if .Site.Menus.icon }}
+        {{ if and (.Site.Menus.icon) (.Site.Params.socialOnNavbar) }}
         <ul class="navbar-nav flex-row">
             {{ range sort .Site.Menus.icon }}
             <li class="nav-item navbar-icon me-3 me-md-2">
