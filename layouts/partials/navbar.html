@@ -1,10 +1,10 @@
 <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         {{ if .Site.Menus.main }}
-        <ul class="navbar-nav flex-row m{{if eq .Site.Params.socialOnNavbar true}}e{{ end }}-auto">
+        <ul class="navbar-nav flex-row justify-content-between justify-content-md-center">
             {{ range sort .Site.Menus.main }}
             <li class="nav-item">
-                <a class="nav-link me-3 me-md-2" href="{{ .URL }}" title="{{ .Name }}">
+                <a class="nav-link" href="{{ .URL }}" title="{{ .Name }}">
                     <span class="{{ .Params.icon }} icon" aria-hidden="true"></span>
                     <span class="d-none d-md-inline" aria-hidden="true">{{ .Name }}</span>
                     <span class="sr-only">{{ .Name }}</span>
@@ -14,20 +14,20 @@
         </ul>
         {{ end }}
         {{ if and (.Site.Menus.icon) (.Site.Params.socialOnNavbar) }}
-        <ul class="navbar-nav flex-row">
+        <ul class="navbar-nav flex-row justify-content-center">
             {{ range sort .Site.Menus.icon }}
-            <li class="nav-item navbar-icon me-3 me-md-2">
+            <li class="nav-item navbar-icon">
                 <a class="nav-link" href="{{ .URL }}" target="_blank">
-                    <span class="{{ .Params.icon }} fa-lg nav-link icon" title="{{ .Name }}" aria-hidden="true"></span>
+                    <span class="{{ .Params.icon }} fa-lg icon" title="{{ .Name }}" aria-hidden="true"></span>
                     <span class="sr-only">{{ .Name }}</span>
                 </a>
             </li>
             {{ end }}
             {{ with .OutputFormats.Get "RSS" }}
             {{ $title := delimit (slice $.Site.Title $.Page.Title "RSS Feed") " "}}
-            <li class="nav-item navbar-icon me-3 me-md-2">
+            <li class="nav-item navbar-icon">
                 <a href="{{ .RelPermalink }}" class="nav-link" rel="feed" type="{{ .MediaType.Type }}" title="{{ $title }}" target="_blank">
-                    <span class="fa-solid fa-square-rss fa-lg nav-item icon" title="{{ $title }}" aria-hidden="true"></span>
+                    <span class="fa-solid fa-square-rss fa-lg icon" title="{{ $title }}" aria-hidden="true"></span>
                     <span class="sr-only">{{ $title }}</span>
                 </a>
             </li>

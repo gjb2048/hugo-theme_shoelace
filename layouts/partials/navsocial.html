@@ -3,7 +3,7 @@
     {{ range sort .Site.Menus.icon }}
     <li class="nav-item">
         <a href="{{ .URL }}" class="nav-link" target="_blank">
-            <span class="{{ .Params.icon }} fa-lg nav-item icon" title="{{ .Name }}" aria-hidden="true"></span>
+            <span class="{{ .Params.icon }} fa-lg icon" title="{{ .Name }}" aria-hidden="true"></span>
             <span class="sr-only">{{ .Name }}</span>
         </a>
     </li>
@@ -12,7 +12,7 @@
     {{ $title := delimit (slice $.Site.Title $.Page.Title "RSS Feed") " "}}
     <li class="nav-item">
         <a href="{{ .RelPermalink }}" class="nav-link" rel="feed" type="{{ .MediaType.Type }}" title="{{ $title }}" target="_blank">
-            <span class="fa-solid fa-square-rss fa-lg nav-item icon" title="{{ $title }}" aria-hidden="true"></span>
+            <span class="fa-solid fa-square-rss fa-lg icon" title="{{ $title }}" aria-hidden="true"></span>
             <span class="sr-only">{{ $title }}</span>
         </a>
     </li>

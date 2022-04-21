@@ -1,5 +1,5 @@
 {{ $headerbackground := .Resources.GetMatch "headerbackground" }}
-<header class="text-center{{ if $headerbackground }} text-light headerbackground{{ end }} mb-2">
+<header class="text-center{{ if $headerbackground }} headerbackground-text headerbackground{{ end }} mb-2">
     {{ with $headerbackground }}
     <style>
     header {

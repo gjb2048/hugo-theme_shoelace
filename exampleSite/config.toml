@@ -10,11 +10,12 @@ enableRobotsTXT = true
     description = "Personal blog theme evolved from Minimal and powered by Hugo"
     accent = "#fc0"
     backgroundColour = "#fcfcfc"
-    hasBackgroundColour = "#fcfcfce6"
     font = "Open Sans" # Should match the name in the assets/scss/fonts file.
     fullbs = false # Set to true to use the full version of Bootstrap with both the CSS and JS.
+    hasBackgroundColour = "#fcfcfce6"
+    headerBackgroundColour = "244,244,244"
     showBorder = true
-    socialOnNavbar = false
+    socialOnNavbar = true
 
 [markup]
   [markup.highlight]
