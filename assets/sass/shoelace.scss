@@ -168,12 +168,11 @@ a {
     padding: 0 15px;
 }
 
-.list-item {
-    display: flex;
-    flex-direction: column;
-
-    .list-item-content {
-        flex: 1 1 auto;
+// Tags
+.item-tags {
+    a {
+        display: inline-block;
+        margin-bottom: 0.18rem;
     }
 }
 
