@@ -21,6 +21,9 @@
     {{ with .Params.headersub }}
     <h2>{{ . }}</h2>
     {{ end }}
+    {{ with .Params.headerqual }}
+    <h3>{{ . }}</h3>
+    {{ end }}
     {{ if .Params.headersocial }}
     {{ partial "navsocial" . }}
     {{ end }}
