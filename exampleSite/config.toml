@@ -14,6 +14,7 @@ enableRobotsTXT = true
     fullbs = false # Set to true to use the full version of Bootstrap with both the CSS and JS.
     hasBackgroundColour = "#fcfcfce6"
     headerBackgroundColour = "244,244,244"
+    paginationPages = 3
     showBorder = true
     socialOnNavbar = true
 

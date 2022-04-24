@@ -4,7 +4,8 @@
         <h2 class="col-12">{{ .Title }}</h2>
     </div>
     <div class="row">
-        {{ range (.Paginator 3).Pages }} {{ partial "list-item" . }} {{ end }}
+        {{ $pages := $.Site.Params.paginationPages | default 3 }}
+        {{ range (.Paginator $pages).Pages }} {{ partial "list-item" . }} {{ end }}
     </div>
     {{ partial "paginator" . }}
 </main>
